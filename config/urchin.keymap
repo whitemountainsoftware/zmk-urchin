@@ -10,6 +10,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>
 
 
 &mt {
@@ -46,7 +47,7 @@
         };
         shift_caps: shift_caps_tapdance {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAPDANCE";
+            label = "SHIFTCAPS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             bindings = <&sk LSHIFT>, <&kp CAPSLOCK>;

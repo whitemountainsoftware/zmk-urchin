@@ -57,7 +57,7 @@
         default_layer {
             bindings = <
                 &kp Q  &kp W  &kp E  &kp R    &kp T               &kp Y      &kp U  &kp I      &kp O    &kp P
-                &kp A  &kp S  &kp D  &hm F    &kp G               &kp H      &kp J  &kp K      &kp L    &kp SEMI
+                &kp A  &kp S  &kp D  &kp F    &kp G               &kp H      &kp J  &kp K      &kp L    &kp SEMI
                 &kp Z  &kp X  &kp C  &kp V    &kp B               &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
                                      &kp SPC  &shift_caps         &sk RCTRL  &to 1
             >;
@@ -65,7 +65,7 @@
 
         left_layer {
             bindings = <
-                &kp TILDE  &kp GRAVE  &td EXCL  &kp AT_SIGN  &kp CARET         &kp DLLR   &mt RBKT LBKT  &none      &kp PLUS   &kp BKSP
+                &kp TILDE  &kp GRAVE  &kp EXCL  &kp AT_SIGN  &kp CARET         &kp DLLR   &mt RBKT LBKT  &none      &kp PLUS   &kp BKSP
                 &kp TAB    &kp SQT    &kp BSLH  &kp ESC      &none             &mt GT LT  &mt RPAR LPAR  &kp STAR   &kp MINUS  &kp ENTER
                 &kp PRCNT  &kp DQT    &kp PIPE  &kp AMPS     &kp DQT           &none      &mt RBRC RBRC  &kp UNDER  &kp EQUAL  &to 3
                                                 &to 0        &sk LSHIFT        &sk RALT   &to 2

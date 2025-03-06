@@ -46,7 +46,7 @@
         td: tapdance {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -58,37 +58,37 @@
         
         base_layer {
             bindings = <
-                &kp Q  &kp W  &kp E  &kp R    &kp T               &kp Y      &kp U  &kp I            &kp O         &kp P
-                &kp A  &kp S  &kp D  &kp F    &kp G               &kp H      &kp J  &kp K            &kp L         &kp SEMI
-                &kp Z  &kp X  &kp C  &kp V    &kp B               &kp N      &kp M  &td UNDER COMMA  &td EXCL DOT  &td MINUS SLASH
+                &kp Q  &kp W  &kp E  &kp R    &kp T               &kp Y      &kp U  &kp I            &kp O          &kp P
+                &kp A  &kp S  &kp D  &kp F    &kp G               &kp H      &kp J  &kp K            &kp L          &kp BKSP
+                &kp Z  &kp X  &kp C  &kp V    &kp B               &kp N      &kp M  &td UNDER COMMA  &td COLON DOT  &kp ENTER
                                      &kp SPC  &sk LSHIFT         &sk RCTRL  &to PUNC
             >;
         };
 
         punctuation_layer {
             bindings = <
-                &kp CAPS   &kp GRAVE  &kp EXCL  &kp AT_SIGN  &kp CARET         &kp DLLR   &mt RBKT LBKT  &kp PRCNT  &kp PLUS   &kp BKSP
-                &kp TAB    &kp SQT    &kp BSLH  &kp ESC      &kp TILDE         &mt GT LT  &mt RPAR LPAR  &kp STAR   &kp MINUS  &kp ENTER
-                &to FKEYS  &kp DQT    &kp PIPE  &kp AMPS     &kp HASH          &none      &mt RBRC RBRC  &kp UNDER  &kp EQUAL  &to MMOVE
-                                                &to BASE     &sk LSHIFT        &sk RALT   &to MEDIA_NUM
+                &to FKEYS  &kp MINUS       &kp EQUAL  &kp EXCL  &kp CARET         &kp DLLR       &td RBKT LBKT  &kp STAR   &kp PLUS   &to MMOVE
+                &kp TAB    &td HASH PRCNT  &kp BSLH   &kp ESC   &td SQT GRAVE     &td RPAR LPAR  &td GT LT      &kp SLASH  &kp DQT    &kp BKSP
+                &kp CAPS   &td AMPS PIPE   &kp TILDE  &kp AT    &kp COMMA         &kp SEMI       &td RBRC RBRC  &kp UNDER  &kp N0     &kp ENTER
+                                                      &to BASE  &sk LSHIFT        &sk RALT       &to MEDIA_NUM
             >;
         };
         
         media_number_layer {
             bindings = <
-                &none        &kp C_MUTE  &kp  C_VOL_DN  &kp C_VOL_UP  &kp SLASH            &kp PLUS   &kp N7  &kp N8  &kp N9  &kp BKSP
-                &kp C_STOP   &kp C_PREV  &kp  C_NEXT    &kp C_PP      &kp STAR             &kp MINUS  &kp N4  &kp N5  &kp N6  &kp ENTER
-                &to BT_CNF   &none       &none          &none         &kp C_AL_CALC        &kp N0     &kp N1  &kp N2  &kp N3  &kp EQUAL
-                                                        &to BASE      &sk LSHIFT           &sk LGUI   &to PUNC
+                &to BT_CNF   &kp C_MUTE  &kp  C_VOL_DN  &kp C_VOL_UP  &kp STAR             &kp PLUS   &kp N7  &kp N8  &kp N9  &kp C_AL_CALC
+                &kp C_STOP   &kp C_PREV  &kp  C_NEXT    &kp C_PP      &kp SLASH            &kp MINUS  &kp N4  &kp N5  &kp N6  &kp BKSP
+                &none        &none       &none          &none         &kp EQUAL            &kp N0     &kp N1  &kp N2  &kp N3  &kp ENTER
+                                                        &to BASE      &sk LSHIFT           &none      &to PUNC
             >;
         };
         
         mouse_move_layer {
             bindings = <
-                &kp LS(LG(S))  &none           &mmv MOVE_UP    &msc SCRL_UP     &none           &none      &none      &none     &none      &kp BKSP
-                &none          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none           &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &kp ENTER
-                &to BT_CNF     &none           &none           &msc SCRL_DOWN   &none           &mkp LCLK  &mkp MCLK  &kp RCLK  &none      &none
-                                                               &to BASE         &sk LSHIFT      &sk RALT     &to PUNC
+                &to BT_CNF     &none           &mmv MOVE_UP    &msc SCRL_UP     &mkp MB5          &mkp LCLK  &mkp MCLK  &kp RCLK   &kp INS    &kp DEL
+                &none          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none             &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &kp BKSP
+                &kp LS(LG(S))  &none           &none           &msc SCRL_DOWN   &mkp MB4          &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp ENTER
+                                                               &to BASE         &sk LSHIFT        &sk LGUI   &to PUNC
         >;
         };
         

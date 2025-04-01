@@ -19,7 +19,10 @@ This layout is inspired by [Seniply by Stevep99](https://stevep99.github.io/seni
 [See it in action on YouTube!](https://youtu.be/IZ83uU0ltaE)
 <div align="center">
   
-  ![sweep-layout](https://user-images.githubusercontent.com/27895007/185715593-69f9f981-ae17-4788-b2a8-d1360c65622a.svg)
+  <picture>
+      <source media="i(min-width: 768px)" srcset="my_urchin_layout.png"/>
+      <img src="my_urchin_layout.png"/>
+  </picture>
 
 </div>
 

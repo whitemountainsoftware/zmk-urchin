@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2025 duckyb
- *
+
  * The first attempt in creating my own layout
  *
  * SPDX-License-Identifier: MIT
@@ -15,7 +15,7 @@
 // Layer defimitions
 #define BASE 0
 #define PUNC 1
-#define MEDIA_NUM 2
+#define NUM  2
 #define MMOVE 3
 #define FKEYS 4
 #define BT_CNF 5
@@ -67,19 +67,19 @@
 
         punctuation_layer {
             bindings = <
-                &to FKEYS  &kp MINUS       &kp EQUAL  &kp EXCL  &kp CARET         &kp DLLR       &td RBKT LBKT  &kp STAR   &kp PLUS   &to MMOVE
-                &kp TAB    &td HASH PRCNT  &kp BSLH   &kp ESC   &td SQT GRAVE     &td RPAR LPAR  &td GT LT      &kp SLASH  &kp DQT    &kp BKSP
-                &kp CAPS   &td AMPS PIPE   &kp TILDE  &kp AT    &kp COMMA         &kp SEMI       &td RBRC RBRC  &kp UNDER  &kp N0     &kp ENTER
-                                                      &to BASE  &sk LSHIFT        &sk RALT       &to MEDIA_NUM
+                &to FKEYS  &kp MINUS       &kp EQUAL  &kp N0     &kp CARET         &kp DLLR   &td RBKT LBKT  &kp SQT    &kp STAR   &to MMOVE
+                &kp TAB    &td HASH PRCNT  &kp AT     &kp SLASH  &td BSLH          &td GT LT  &td RPAR LPAR  &kp DQT    &kp PLUS   &kp BKSP
+                &kp CAPS   &td AMPS PIPE   &kp EXCL   &kp TILDE  &kp COMMA         &kp SEMI   &td RBRC RBRC  &kp GRAVE  &kp UNDER  &kp ENTER
+                                                      &to BASE   &sk LSHIFT        &sk RALT   &to NUM
             >;
         };
         
-        media_number_layer {
+        number_layer {
             bindings = <
-                &to BT_CNF   &kp C_MUTE  &kp  C_VOL_DN  &kp C_VOL_UP  &kp STAR             &kp PLUS   &kp N7  &kp N8  &kp N9  &kp C_AL_CALC
-                &kp C_STOP   &kp C_PREV  &kp  C_NEXT    &kp C_PP      &kp SLASH            &kp MINUS  &kp N4  &kp N5  &kp N6  &kp BKSP
-                &none        &none       &none          &none         &kp EQUAL            &kp N0     &kp N1  &kp N2  &kp N3  &kp ENTER
-                                                        &to BASE      &sk LSHIFT           &none      &to PUNC
+                &kp N1      &kp N2  &kp N3     &kp N4     &kp N5             &kp N6    &kp N7  &kp N8  &kp N9  &kp N0
+                &none       &none   &kp MINUS  &kp SLASH  &none              &kp DOT   &kp N4  &kp N5  &kp N6  &kp BKSP
+                &C_AL_CALC  &none   &kp PLUS   &kp STAR   &kp EQUAL          &kp N0    &kp N1  &kp N2  &kp N3  &kp ENTER
+                                               &to BASE   &sk LSHIFT         &sk LGUI  &to PUNC
             >;
         };
         
@@ -94,10 +94,10 @@
         
         fkeys_layer {
             bindings = <
-                &none      &none  &none  &none     &none             &none  &kp F1  &kp F2   &kp F3   &kp F4
-                &none      &none  &none  &none     &none             &none  &kp F5  &kp F6   &kp F7   &kp F8
-                &to BT_CNF &none  &none  &none     &none             &none  &kp F9  &kp F10  &kp F11  &kp F12
-                                         &to BASE  &sk LSHIFT        &none  &to PUNC
+                &to BT_CNF  &kp C_MUTE  &kp  C_VOL_DN  &kp C_VOL_UP  &none             &kp F12  &kp F7  &kp F8  &kp F9  &none
+                &kp C_STOP  &kp C_PREV  &kp  C_NEXT    &kp C_PP      &none             &kp F11  &kp F4  &kp F5  &kp F6  &none
+                &none       &none       &none          &none         &none             &kp F10  &kp F1  &kp F2  &kp F3  &none
+                                                       &to BASE      &sk LSHIFT        &none    &to PUNC
             >;
         };      
 

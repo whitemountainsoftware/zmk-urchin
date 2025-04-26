@@ -1,0 +1,88 @@
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/pointing.h>
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 80    // default: 10
+
+// Layer aliases
+#define MOUSE 7
+#define MOUSEFAST 8
+#define MOUSESLOW 9
+#define MOUSEXSLOW 10
+
+&mmv {
+    time-to-max-speed-ms = <120>;
+    acceleration-exponent = <6>;
+};
+
+&msc {
+    time-to-max-speed-ms = <80>;
+    acceleration-exponent = <10>;
+};
+
+&mmv_input_listener {
+    set_mouse_fast {
+        layers = <MOUSEFAST>;
+        input-processors = <&zip_xy_scaler 2 1>;
+    };
+};
+
+&mmv_input_listener {
+    set_mouse_slow {
+        layers = <MOUSESLOW>;
+        input-processors = <&zip_xy_scaler 1 2>;
+    };
+};
+
+&mmv_input_listener {
+    set_mouse_extra_slow {
+        layers = <MOUSEXSLOW>;
+        input-processors = <&zip_xy_scaler 1 4>;
+    };
+};
+
+# other things...
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        # other layers...
+
+        MOUSE {
+            bindings = <
+&none  &kp LEFT_SHIFT  &kp LEFT_GUI  &kp LEFT_ALT  &none    &none           &none           &mmv MOVE_UP    &none            &none
+&none  &mo 8           &mo 9         &mo 10        &none    &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK
+&none  &none           &none         &none         &none    &msc SCRL_DOWN  &msc SCRL_LEFT  &mkp MCLK       &msc SCRL_RIGHT  &none
+                                     &none         &none    &none           &mkp LCLK
+            >;
+        }; 
+
+        MOUSEFAST {
+            bindings = <
+&none  &none  &none  &none  &none    &none           &none           &mmv MOVE_UP    &none            &none
+&none  &none  &none  &none  &none    &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK
+&none  &none  &none  &none  &none    &msc SCRL_DOWN  &msc SCRL_LEFT  &mkp MCLK       &msc SCRL_RIGHT  &none
+                     &none  &none    &none           &mkp LCLK
+            >;
+        };
+
+        MOUSESLOW {
+            bindings = <
+&none  &none  &none  &none  &none    &none           &none           &mmv MOVE_UP    &none            &none
+&none  &none  &none  &none  &none    &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK
+&none  &none  &none  &none  &none    &msc SCRL_DOWN  &msc SCRL_LEFT  &mkp MCLK       &msc SCRL_RIGHT  &none
+                     &none  &none    &none           &mkp LCLK
+            >;
+        };
+
+        MOUSEXSLOW {
+            bindings = <
+&none  &none  &none  &none  &none    &none           &none           &mmv MOVE_UP    &none            &none
+&none  &none  &none  &none  &none    &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK
+&none  &none  &none  &none  &none    &msc SCRL_DOWN  &msc SCRL_LEFT  &mkp MCLK       &msc SCRL_RIGHT  &none
+                     &none  &none    &none           &mkp LCLK
+            >;
+        };
+    };
+};

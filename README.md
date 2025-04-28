@@ -16,7 +16,7 @@ Check [the ZMK docs](https://zmk.dev/docs/user-setup#installing-the-firmware) fo
 > Explaination and rational behind this layout can be found [below image](#layout-explaination)
 
 <div align="center">
-  ![Layout!](my_urchin_layout.svg)
+  ![Layout](./my_urchin_layout.svg)
   <img src="./my_urchin_layout.svg">
 </div>
 
@@ -25,5 +25,8 @@ Check [the ZMK docs](https://zmk.dev/docs/user-setup#installing-the-firmware) fo
 
 ## Layout Explaination
 
-Explaination comes here
+This layout is created to work well for normal typing as well as programming using (neo)vim. To not overcomplicate switching between the Urchin keyboard and work laptop keyboard I did not move to a more optimized layout, like Dvorak or Colemak HD, and kept the Qwerty layout. Instead of normal shift modifier a shift_layout is created. This gives the options to have a different key when 'shift' is pressed (e.g. Esc, : for Vim and _ used often while programming).
+
+***More to come***
+
 

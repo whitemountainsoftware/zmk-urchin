@@ -87,10 +87,10 @@
         // 3: shift symbol layer
         shift_symbol_layer {
             bindings = <
-                &to BT  &none  &none  &none  &none         &none   &kp RBKT  &none      &kp AMPS   &to FKEYS
-                &none   &none  &none  &none  &none         &kp GT  &kp RPAR  &none      &kp EQUAL  &kp ESC
-                &none   &none  &none  &none  &none         &none   &kp RBRC  &kp UNDER  &kp COLON  &none
-                                      &none  &none         &none   &sk RALT
+                &to BT   &none  &none  &none  &none         &none   &kp RBKT  &none      &kp AMPS   &to FKEYS
+                &kp TAB  &none  &none  &none  &none         &kp GT  &kp RPAR  &none      &kp EQUAL  &kp ESC
+                &none    &none  &none  &none  &none         &none   &kp RBRC  &kp UNDER  &kp COLON  &none
+                                       &none  &none         &none   &sk RALT
             >;
         };
         // 4: nunbers layee
